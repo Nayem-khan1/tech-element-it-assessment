@@ -11,15 +11,6 @@ interface ProductPageProps {
   }>;
 }
 
-// Generate static paths for all products
-export async function generateStaticParams() {
-  const response = await axios.get("https://fakestoreapi.com/products");
-  const products: Product[] = response.data;
-  return products.map((product) => ({
-    productId: product.id.toString(),
-  }));
-}
-
 // Fetch data for a single product
 async function getProduct(id: string): Promise<Product | null> {
   try {
