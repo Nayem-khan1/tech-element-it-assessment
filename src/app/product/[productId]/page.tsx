@@ -5,9 +5,9 @@ import { Metadata } from "next";
 import AddToCartButton from "./AddToCartButton";
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     productId: string;
-  };
+  }>;
 }
 
 // Generate static paths for all products
@@ -31,9 +31,8 @@ async function getProduct(id: string): Promise<Product | null> {
 }
 
 // Generate dynamic metadata for SEO
-export async function generateMetadata({
-  params,
-}: ProductPageProps): Promise<Metadata> {
+export async function generateMetadata(props: ProductPageProps): Promise<Metadata> {
+  const params = await props.params;
   const product = await getProduct(params.productId);
   if (!product) {
     return {
@@ -47,7 +46,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage(props: ProductPageProps) {
+  const params = await props.params;
   const product = await getProduct(params.productId);
 
   if (!product) {
