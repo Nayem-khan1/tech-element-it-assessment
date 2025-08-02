@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { Product } from "@/types";
 import axios from "axios";
 import Image from "next/image";
@@ -31,7 +32,9 @@ async function getProduct(id: string): Promise<Product | null> {
 }
 
 // Generate dynamic metadata for SEO
-export async function generateMetadata(props: ProductPageProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: ProductPageProps
+): Promise<Metadata> {
   const params = await props.params;
   const product = await getProduct(params.productId);
   if (!product) {
