@@ -2,7 +2,6 @@ import { Product } from "@/types";
 import axios from "axios";
 import ProductCard from "@/components/ProductCard";
 import HeroCarousel from "@/components/carusel/HeroCarousel";
-import OffersSlider from "@/components/OffersSlider";
 import StickyCart from "@/components/StickyCart";
 import Newsletter from "@/components/Newsletter";
 import OfferCard from "@/components/OfferCard";

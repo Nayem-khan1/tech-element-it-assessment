@@ -10,10 +10,7 @@ import MobileNav from "./MobileNav";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Shop", href: "/shop" },
   { name: "Orders", href: "/orders" },
-  { name: "Offers", href: "/offers" },
-  { name: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -67,7 +64,7 @@ const Navbar = () => {
               </Link>
 
               <Link
-                href="/profile"
+                href="/"
                 aria-label="User Profile"
                 className="text-white hover:text-light-blue-grey"
               >
