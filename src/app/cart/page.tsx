@@ -8,7 +8,6 @@ import {
   removeFromCart,
 } from "@/store/cartSlice";
 import Image from "next/image";
-import CheckoutForm from "@/components/CheckoutForm";
 import Link from "next/link";
 
 const CartPage = () => {
