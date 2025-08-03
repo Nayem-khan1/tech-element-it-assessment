@@ -20,7 +20,7 @@ const CartPage = () => {
   );
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg">
+    <div className="mx-auto py-4 sm:py-8 max-w-screen-2xl px-3 sm:px-10">
       <h1 className="text-3xl font-bold mb-8 text-charcoal-blue">
         Shopping Cart
       </h1>
@@ -60,7 +60,7 @@ const CartPage = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="sm:flex items-center gap-4">
                     <div className="flex items-center border border-light-blue-grey rounded">
                       <button
                         onClick={() => dispatch(decrementQuantity(item.id))}
