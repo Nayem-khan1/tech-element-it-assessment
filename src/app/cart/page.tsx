@@ -41,9 +41,10 @@ const CartPage = () => {
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex items-center justify-between p-4 border border-light-blue-grey rounded-lg"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 border border-light-blue-grey rounded-lg"
                 >
-                  <div className="flex items-center gap-4">
+                  {/* Product Info */}
+                  <div className="flex flex-col sm:flex-row items-center gap-4 flex-1">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -51,7 +52,7 @@ const CartPage = () => {
                       height={80}
                       className="object-contain"
                     />
-                    <div>
+                    <div className="text-center sm:text-left">
                       <h2 className="font-semibold text-dark-slate">
                         {item.title}
                       </h2>
@@ -60,7 +61,9 @@ const CartPage = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="sm:flex items-center gap-4">
+
+                  {/* Quantity & Remove Buttons */}
+                  <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
                     <div className="flex items-center border border-light-blue-grey rounded">
                       <button
                         onClick={() => dispatch(decrementQuantity(item.id))}
